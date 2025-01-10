@@ -21,12 +21,13 @@ from foodTypes.views import FoodTypeViewSet
 from foods.views import FoodViewSet
 from meals.views import (
     MealViewSet,
+    delete_meal,
 )
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
 )
+from meals.views import TokenObtainPairView
 
 router = DefaultRouter()
 router.register(r"foods", FoodViewSet)
@@ -40,4 +41,5 @@ urlpatterns = [
     # path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("login/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("meals/<int:meal_id>/", delete_meal, name="delete_meal"),
 ]
