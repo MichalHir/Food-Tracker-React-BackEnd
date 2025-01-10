@@ -9,3 +9,5 @@ python manage.py createsuperuser
 micha32
 micha32@gmail.com
 1234567
+ran
+YVS5Lcx5E6g.EA
