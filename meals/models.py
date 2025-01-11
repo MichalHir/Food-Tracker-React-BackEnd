@@ -6,6 +6,7 @@ from foods.models import Food
 # Create your models here.
 class Meal(models.Model):
     # user = models.ForeignKey(MyUser, on_delete=models.DO_NOTHING, related_name='user',null=True)
+    user = models.CharField(max_length=255, null=True)
     date = models.DateField()
     time = models.TimeField()
     food_info = models.ManyToManyField(

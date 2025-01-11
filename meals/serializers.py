@@ -14,7 +14,7 @@ class MealSerializer(serializers.ModelSerializer):
         model = Meal
         fields = [
             "id",
-            # "user",
+            "user",
             "date",
             "time",
             "food_info",

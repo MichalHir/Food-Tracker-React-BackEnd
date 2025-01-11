@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 
+# deploy
+# import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -50,6 +53,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -81,13 +85,36 @@ WSGI_APPLICATION = "back_end.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# postgresql://food_tracker_app_db_user:r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q@dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com/food_tracker_app_db
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# deploy: Replace the SQLite DATABASES configuration with PostgreSQL:
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default="postgresql://postgres:postgres.render.com/food_tracker_app_db",
+#         conn_max_age=600,
+#     )
+# }
+
+# # deploy
+# STATIC_URL = "/static/"
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "food_tracker_app_db",
+#         "USER": "food_tracker_app_db_user",
+#         "PASSWORD": "r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q",
+#         "HOST": "dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation
