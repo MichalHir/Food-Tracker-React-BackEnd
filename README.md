@@ -21,3 +21,5 @@ In terminal:
    python manage.py createsuperuser
 7. Open http://127.0.0.1:8000/ to view the app in your browser.
 8. Add food types,foods and meal, via shell,admin site or the app itself
+9. Front end repository:
+   https://github.com/MichalHir/Food-Tracker-React.git
