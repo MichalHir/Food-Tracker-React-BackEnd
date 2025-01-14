@@ -107,18 +107,19 @@ DATABASES = {
 # }
 
 # # deploy
+STATIC_ROOT = BASE_DIR
 # STATIC_URL = "/static/"
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "food_tracker_app_db",
-#         "USER": "food_tracker_app_db_user",
-#         "PASSWORD": "r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q",
-#         "HOST": "dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com",
-#         "PORT": "5432",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "food_tracker_app_db",
+        "USER": "food_tracker_app_db_user",
+        "PASSWORD": "r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q",
+        "HOST": "dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com",
+        "PORT": "5432",
+    }
+}
 
 
 # Password validation
