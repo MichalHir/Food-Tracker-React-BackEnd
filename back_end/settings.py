@@ -16,6 +16,8 @@ from datetime import timedelta
 # deploy
 # import dj_database_url
 
+{"python.analysis.extraPaths": ["./venv/Lib/site-packages"]}
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,7 +87,7 @@ WSGI_APPLICATION = "back_end.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-# postgresql://food_tracker_app_db_user:r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q@dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com/food_tracker_app_db
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -94,10 +96,12 @@ DATABASES = {
 }
 
 # deploy: Replace the SQLite DATABASES configuration with PostgreSQL:
+# postgresql://food_tracker_app_db_user:r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q@dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com/food_tracker_app_db
 # DATABASES = {
 #     "default": dj_database_url.config(
 #         # Replace this value with your local database's connection string.
-#         default="postgresql://postgres:postgres.render.com/food_tracker_app_db",
+#         # default="postgresql://postgres:postgres.render.com/food_tracker_app_db",
+#         default="postgresql://food_tracker_app_db_user:r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q@dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com/food_tracker_app_db",
 #         conn_max_age=600,
 #     )
 # }
@@ -174,7 +178,4 @@ REST_FRAMEWORK = {
 # costomizing
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=365),
-    #     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    #     "ROTATE_REFRESH_TOKENS": False,
-    #     "BLACKLIST_AFTER_ROTATION": True,
 }

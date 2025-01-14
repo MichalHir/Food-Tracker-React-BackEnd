@@ -26,11 +26,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def get_token(cls, user):
         # Get the token object
         token = super().get_token(user)
-
-        # Add custom claims to the token payload
         token["username"] = user.username
-        token["is_admin"] = (
-            user.is_staff
-        )  # Assuming 'is_admin' corresponds to `is_staff`
+        token["is_admin"] = user.is_staff
 
         return token

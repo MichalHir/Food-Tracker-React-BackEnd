@@ -8,8 +8,3 @@ from foods.serializers import FoodSerializer, FoodTypeSerializer
 class FoodViewSet(viewsets.ModelViewSet):
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
-
-
-# class FoodTypeViewSet(viewsets.ModelViewSet):
-#     queryset = Food_type.objects.all()
-#     serializer_class = FoodTypeSerializer
