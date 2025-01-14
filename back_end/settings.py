@@ -31,7 +31,7 @@ SECRET_KEY = "django-insecure-reklcc60mf76$1prpc$h4cw8l_%q8*45!6-5x=l1!g+p67@9n@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://food-tracker-react-backend.onrender.com"]
 
 
 # Application definition
