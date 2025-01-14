@@ -29,10 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-reklcc60mf76$1prpc$h4cw8l_%q8*45!6-5x=l1!g+p67@9n@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# deploy:
+# DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://food-tracker-react-backend.onrender.com"]
-
+ALLOWED_HOSTS = ["food-tracker-react-backend.onrender.com", "localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -110,16 +111,16 @@ DATABASES = {
 STATIC_ROOT = BASE_DIR
 # STATIC_URL = "/static/"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "food_tracker_app_db",
-        "USER": "food_tracker_app_db_user",
-        "PASSWORD": "r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q",
-        "HOST": "dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "food_tracker_app_db",
+#         "USER": "food_tracker_app_db_user",
+#         "PASSWORD": "r3v8f1c2BwJCtyDuWAYbAfSEpwQND44Q",
+#         "HOST": "dpg-cu0m2f1u0jms73dsj0cg-a.oregon-postgres.render.com",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation
